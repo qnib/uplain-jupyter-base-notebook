@@ -108,4 +108,6 @@ COPY start-notebook.sh /usr/local/bin/
 COPY start-singleuser.sh /usr/local/bin/
 COPY jupyter_notebook_config.py /etc/jupyter/
 RUN fix-permissions /etc/jupyter/
+RUN apt-get update \
+ && apt-get install -y curl
 USER $NB_USER
