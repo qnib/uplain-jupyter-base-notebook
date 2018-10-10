@@ -14,7 +14,8 @@ c.NotebookApp.open_browser = False
 
 # https://github.com/jupyter/notebook/issues/3130
 c.FileContentsManager.delete_to_trash = False
-
+# https://github.com/jupyter/jupyter/issues/79
+c.NotebookApp.allow_origin = '*'
 # Generate a self-signed certificate
 if 'GEN_CERT' in os.environ:
     dir_name = jupyter_data_dir()
