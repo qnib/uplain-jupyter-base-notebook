@@ -9,7 +9,7 @@ set -ex
 if [[ ! -z "${JUPYTERHUB_API_TOKEN}" ]]; then
   # launched by JupyterHub, use single-user entrypoint
   #exec /usr/local/bin/start-singleuser.sh $*
-  jupyter notebook --debug \
+  jupyter notebook --debug --allow-root \
           --config=/etc/jupyter/jupyter_notebook_config.py \
           --NotebookApp.base_url=${JUPYTERPORT_ROUTE} \
           --NotebookApp.token=${JUPYTERHUB_API_TOKEN} \
